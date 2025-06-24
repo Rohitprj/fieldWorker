@@ -1,6 +1,7 @@
+import { FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function Login() {
   const [id, setId] = useState('');
@@ -19,15 +20,17 @@ export default function Login() {
         marginTop: 50,
         marginBottom: 30
       }}>
-        <Image
+        {/* <Image
           source={{ uri: 'https://via.placeholder.com/100' }}  // Replace with your actual image URL
           style={{
             width: 100,
             height: 100,
             borderRadius: 50
           }}
-        />
-        <TouchableOpacity style={{
+        /> */}
+        <FontAwesome name="user-circle-o" size={124} color="black" />
+        {/* <Text style={{ fontSize: 48,bottom:50 }}>✎</Text> */}
+        {/* <TouchableOpacity style={{
           position: 'absolute',
           right: 110,
           bottom: 0,
@@ -35,8 +38,7 @@ export default function Login() {
           borderRadius: 12,
           padding: 2
         }}>
-          <Text style={{ fontSize: 18 }}>✎</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
 
       <View style={{ flex: 1 }}>
