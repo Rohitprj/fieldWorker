@@ -41,7 +41,7 @@ const router = useRouter();
         By signing up you agree to our <Text style={styles.link}>Terms and conditions</Text> and <Text style={styles.link}>Privacy Policy</Text>.
       </Text>
 
-      <TouchableOpacity style={styles.nextButton} onPress={() => {handleNext(),router.push('/UploadScreen')}}>
+      <TouchableOpacity style={styles.nextButton} onPress={() => {router.push('/UploadScreen')}}>
         <Text style={styles.nextText}>NEXT →</Text>
       </TouchableOpacity>
     </ScrollView>
