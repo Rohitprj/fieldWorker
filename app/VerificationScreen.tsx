@@ -110,7 +110,7 @@ export default function VerificationScreen() {
         }
         return prev + 1;
       });
-    }, 100);
+    }, 10);
 
     return () => clearInterval(interval);
   }, []);

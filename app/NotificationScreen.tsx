@@ -1,5 +1,6 @@
+import { useRouter } from 'expo-router';
 import React from 'react';
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const notifications = [
   {
@@ -18,10 +19,51 @@ const notifications = [
     time: 'Last Wednesday at 9:42 AM',
     read: false,
   },
+  {
+    id: '3',
+    name: 'John Doe',
+    avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+    message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    time: 'Last Wednesday at 9:42 AM',
+    read: false,
+  },
+  {
+    id: '4',
+    name: 'Jane Smith',
+    avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+    message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    time: 'Last Wednesday at 9:42 AM',
+    read: false,
+  },
+  {
+    id: '5',
+    name: 'John Doe',
+    avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+    message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    time: 'Last Wednesday at 9:42 AM',
+    read: false,
+  },
+  {
+    id: '6',
+    name: 'Jane Smith',
+    avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+    message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    time: 'Last Wednesday at 9:42 AM',
+    read: false,
+  },
+  {
+    id: '7',
+    name: 'John Doe',
+    avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+    message: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    time: 'Last Wednesday at 9:42 AM',
+    read: false,
+  },
   // Add more mock notifications here...
 ];
 
 export default function NotificationScreen() {
+  const router = useRouter();
   const renderItem = ({ item }) => (
     <View style={styles.notificationItem}>
       <Image source={{ uri: item.avatar }} style={styles.avatar} />
@@ -42,12 +84,14 @@ export default function NotificationScreen() {
         <TouchableOpacity><Text style={styles.tab}>Unread</Text></TouchableOpacity>
         <TouchableOpacity><Text style={styles.tab}>Read</Text></TouchableOpacity>
       </View>
-
       <FlatList
         data={notifications}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
       />
+  <View style={{ bottom: 30 }}>
+    <Button title="Go to Face Selfie Screen" onPress={() => router.push('/FaceSelfieScreen')} />
+  </View>
     </View>
   );
 }
