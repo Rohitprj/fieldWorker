@@ -29,6 +29,7 @@ export default function RootLayout() {
         <Stack.Screen name="NotificationScreen" options={{ headerShown: false }} />
         <Stack.Screen name="FaceSelfieScreen" options={{ headerShown: false }} />
         <Stack.Screen name="HelpScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="Settings" options={{ headerShown: false }} />
 
 
         <Stack.Screen name="+not-found" />
