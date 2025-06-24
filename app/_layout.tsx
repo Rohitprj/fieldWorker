@@ -20,7 +20,15 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="Login" options={{ headerShown: false }} />
+        <Stack.Screen name="SelfieScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="FormScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="UploadScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="VerificationScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="HomeScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="NotificationScreen" options={{ headerShown: false }} />
+
+
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
