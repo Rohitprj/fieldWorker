@@ -1,4 +1,4 @@
-import { Entypo, FontAwesome, MaterialIcons } from "@expo/vector-icons";
+import { Entypo, FontAwesome } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
@@ -10,7 +10,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-
+import cameraButton from "../assets/images/cameraButton.png";
+import unrootAccess from "../assets/images/unrootAccess.png";
 export default function HomeScreen() {
   const [callModalVisible, setCallModalVisible] = useState(false);
   const router = useRouter();
@@ -22,17 +23,35 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       {/* Coupon Code */}
-      <Entypo
-        name="menu"
-        size={34}
-        color="black"
+      <View
         style={{
-          alignSelf: "flex-start",
-          padding: 4,
-          backgroundColor: "lightgrey",
-          borderRadius: 30,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          width: "100%",
         }}
-      />
+      >
+        <TouchableOpacity onPress={() => router.push("/Settings")}>
+          <Entypo
+            name="menu"
+            size={34}
+            color="black"
+            style={{
+              alignSelf: "flex-start",
+              padding: 4,
+              backgroundColor: "lightgrey",
+              borderRadius: 30,
+            }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => router.push("/FaceSelfieScreen")}>
+          <Image
+            source={cameraButton}
+            style={{
+              alignSelf: "flex-end",
+            }}
+          />
+        </TouchableOpacity>
+      </View>
       <Text style={styles.title}>Today's Coupon Code</Text>
       <View style={styles.couponContainer}>
         <Text style={styles.couponCode}>G89HG56</Text>
@@ -77,7 +96,12 @@ export default function HomeScreen() {
       >
         <Text style={styles.unrootedText}>Tap to see</Text>
 
-        <MaterialIcons name="account-box" size={64} color="black" />
+        <Image
+          source={unrootAccess}
+          style={{
+            alignSelf: "center",
+          }}
+        />
         <View style={styles.unrootedBox}>
           <Text style={{ color: "#000", fontSize: 18, fontWeight: "700" }}>
             Unrooted Accounts
@@ -85,14 +109,14 @@ export default function HomeScreen() {
           {/* You can replace with actual icon */}
         </View>
       </TouchableOpacity>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={{
           backgroundColor: "#91b49c",
           padding: 15,
           borderRadius: 8,
           alignItems: "center",
           width: "100%",
-          marginTop: 50,
+          marginTop: 20,
         }}
         onPress={() => {
           router.push("/NotificationScreen");
@@ -106,7 +130,7 @@ export default function HomeScreen() {
         >
           Next
         </Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <Modal
         animationType="slide"
         transparent={true}
