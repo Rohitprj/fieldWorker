@@ -258,13 +258,12 @@ export default function App() {
   );
 }
 
-// Stylesheet for the React Native components
 const styles = StyleSheet.create({
   container: {
     padding: 16,
-    backgroundColor: "#f0f2f5", // Light grey background for a clean look
-    minHeight: "100%", // Ensures the container takes up the full viewport height
-    alignItems: "center", // Centers content horizontally
+    backgroundColor: "#f0f2f5",
+    minHeight: "100%",
+    alignItems: "center",
   },
   noteContainer: {
     backgroundColor: "#fff",
@@ -272,22 +271,22 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 24,
     marginTop: 50,
-    width: "90%", // Responsive width
-    maxWidth: 600, // Maximum width for readability on large screens
-    shadowColor: "#000", // Shadow properties for Android and iOS
-    shadowOffset: { width: 0, height: 4 }, // Shadow offset for iOS
-    shadowOpacity: 0.08, // Shadow opacity for iOS
-    shadowRadius: 10, // Shadow radius for iOS
-    elevation: 5, // Elevation for Android
+    width: "90%",
+    maxWidth: 600,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 10,
+    elevation: 5,
   },
   fireText: {
     fontWeight: "bold",
-    color: "#FF5A1F", // Vibrant orange color
-    fontSize: 18, // Font size for React Native Text
+    color: "#FF5A1F",
+    fontSize: 18,
     marginBottom: 8,
   },
   boldText: {
-    fontWeight: "600", // Using string for fontWeight
+    fontWeight: "600",
     fontSize: 16,
     marginBottom: 6,
     color: "#555",
