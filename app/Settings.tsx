@@ -61,7 +61,7 @@
 //               key={index}
 //               onPress={() => setLanguageModalVisible(true)}
 //             >
-//               <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}> 
+//               <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}>
 //                 <item.icon name={item.iconName} size={20} color={"white"} />
 //               </View>
 //               <Text style={styles.menuLabel}>{item.label}</Text>
@@ -78,7 +78,7 @@
 //               key={index}
 //               onPress={() => setLogoutModalVisible(true)}
 //             >
-//               <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}> 
+//               <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}>
 //                 <item.icon name={item.iconName} size={20} color={"white"} />
 //               </View>
 //               <Text style={styles.menuLabel}>{item.label}</Text>
@@ -89,7 +89,7 @@
 
 //         return (
 //           <TouchableOpacity style={styles.menuItem} key={index}>
-//             <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}> 
+//             <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}>
 //               <item.icon name={item.iconName} size={20} color={"white"} />
 //             </View>
 //             <Text style={styles.menuLabel}>{item.label}</Text>
@@ -285,28 +285,27 @@
 //   },
 // });
 
-
 import {
-    AntDesign,
-    Entypo,
-    Feather,
-    FontAwesome,
-    Ionicons,
-    MaterialIcons,
+  AntDesign,
+  Entypo,
+  Feather,
+  FontAwesome,
+  Ionicons,
+  MaterialIcons,
 } from "@expo/vector-icons";
 import { router } from "expo-router";
 import React, { useState } from "react";
 import {
-    FlatList,
-    Image,
-    Modal,
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Switch,
-    Text,
-    TouchableOpacity,
-    View,
+  FlatList,
+  Image,
+  Modal,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Switch,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 export default function SettingsScreen() {
@@ -325,8 +324,8 @@ export default function SettingsScreen() {
 
   const handleLogout = () => {
     setLogoutModalVisible(false);
-    router.push("/Login"); 
-    console.log("Logged out"); 
+    router.push("/FirstPage");
+    console.log("Logged out");
   };
 
   return (
@@ -352,11 +351,13 @@ export default function SettingsScreen() {
               key={index}
               onPress={() => setLanguageModalVisible(true)}
             >
-              <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}> 
+              <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}>
                 <item.icon name={item.iconName} size={20} color={"white"} />
               </View>
               <Text style={styles.menuLabel}>{item.label}</Text>
-              <Text style={styles.rightText}>{selectedLanguage.slice(0, 3).toUpperCase()}</Text>
+              <Text style={styles.rightText}>
+                {selectedLanguage.slice(0, 3).toUpperCase()}
+              </Text>
               <Ionicons name="chevron-forward" size={20} color="#888" />
             </TouchableOpacity>
           );
@@ -369,7 +370,7 @@ export default function SettingsScreen() {
               key={index}
               onPress={() => setLogoutModalVisible(true)}
             >
-              <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}> 
+              <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}>
                 <item.icon name={item.iconName} size={20} color={"white"} />
               </View>
               <Text style={styles.menuLabel}>{item.label}</Text>
@@ -385,7 +386,7 @@ export default function SettingsScreen() {
               key={index}
               onPress={() => setCallModalVisible(true)}
             >
-              <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}> 
+              <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}>
                 <item.icon name={item.iconName} size={20} color={"white"} />
               </View>
               <Text style={styles.menuLabel}>{item.label}</Text>
@@ -396,11 +397,13 @@ export default function SettingsScreen() {
 
         return (
           <TouchableOpacity style={styles.menuItem} key={index}>
-            <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}> 
+            <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}>
               <item.icon name={item.iconName} size={20} color={"white"} />
             </View>
             <Text style={styles.menuLabel}>{item.label}</Text>
-            {item.rightText && <Text style={styles.rightText}>{item.rightText}</Text>}
+            {item.rightText && (
+              <Text style={styles.rightText}>{item.rightText}</Text>
+            )}
             {item.isSwitch ? (
               <Switch
                 value={isDarkTheme}
@@ -436,7 +439,7 @@ export default function SettingsScreen() {
               >
                 <View>
                   <Text style={{ fontSize: 16 }}>{lang.native}</Text>
-                  <Text style={{ color: '#777' }}>{lang.name}</Text>
+                  <Text style={{ color: "#777" }}>{lang.name}</Text>
                 </View>
                 {selectedLanguage === lang.name && (
                   <AntDesign name="checkcircle" size={20} color="#4f9efd" />
@@ -455,23 +458,35 @@ export default function SettingsScreen() {
         onRequestClose={() => setLogoutModalVisible(false)}
       >
         <View style={styles.modalOverlay}>
-          <View style={[styles.modalContent, { alignItems: 'center' }]}>
-            <Text style={{ fontSize: 18, color: 'red', fontWeight: 'bold' }}>Logout</Text>
-            <Text style={{ marginVertical: 15, color: '#444' }}>
+          <View style={[styles.modalContent, { alignItems: "center" }]}>
+            <Text style={{ fontSize: 18, color: "red", fontWeight: "bold" }}>
+              Logout
+            </Text>
+            <Text style={{ marginVertical: 15, color: "#444" }}>
               Are you sure you want to logout?
             </Text>
-            <View style={{ flexDirection: 'row', gap: 10 }}>
+            <View style={{ flexDirection: "row", gap: 10 }}>
               <TouchableOpacity
                 onPress={() => setLogoutModalVisible(false)}
-                style={{ backgroundColor: '#f0f0f0', paddingHorizontal: 20, paddingVertical: 10, borderRadius: 20 }}
+                style={{
+                  backgroundColor: "#f0f0f0",
+                  paddingHorizontal: 20,
+                  paddingVertical: 10,
+                  borderRadius: 20,
+                }}
               >
                 <Text>Cancel</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={handleLogout}
-                style={{ backgroundColor: '#e53935', paddingHorizontal: 20, paddingVertical: 10, borderRadius: 20 }}
+                style={{
+                  backgroundColor: "#e53935",
+                  paddingHorizontal: 20,
+                  paddingVertical: 10,
+                  borderRadius: 20,
+                }}
               >
-                <Text style={{ color: 'white' }}>Logout</Text>
+                <Text style={{ color: "white" }}>Logout</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -486,16 +501,30 @@ export default function SettingsScreen() {
         onRequestClose={() => setCallModalVisible(false)}
       >
         <View style={styles.modalOverlay}>
-          <View style={[styles.modalContent, { maxHeight: '80%' }]}>
+          <View style={[styles.modalContent, { maxHeight: "80%" }]}>
             <FlatList
               data={callData}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({ item }) => (
-                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 15 }}>
-                  <Image source={{ uri: item.image }} style={{ width: 40, height: 40, borderRadius: 20, marginRight: 10 }} />
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    marginBottom: 15,
+                  }}
+                >
+                  <Image
+                    source={{ uri: item.image }}
+                    style={{
+                      width: 40,
+                      height: 40,
+                      borderRadius: 20,
+                      marginRight: 10,
+                    }}
+                  />
                   <View style={{ flex: 1 }}>
-                    <Text style={{ fontWeight: '600' }}>{item.name}</Text>
-                    <Text style={{ color: '#777' }}>{item.phone}</Text>
+                    <Text style={{ fontWeight: "600" }}>{item.name}</Text>
+                    <Text style={{ color: "#777" }}>{item.phone}</Text>
                   </View>
                   <FontAwesome name="phone" size={22} color="green" />
                 </View>
@@ -510,15 +539,42 @@ export default function SettingsScreen() {
 
 const menuItems = [
   { label: "Account", icon: MaterialIcons, iconName: "person", bg: "#f78c2a" },
-  { label: "Notifications", icon: Ionicons, iconName: "notifications", bg: "#ef4f91" },
-  { label: "Statement", icon: Ionicons, iconName: "document-text", bg: "#9c5aff", rightText: "123" },
+  {
+    label: "Notifications",
+    icon: Ionicons,
+    iconName: "notifications",
+    bg: "#ef4f91",
+  },
+  {
+    label: "Statement",
+    icon: Ionicons,
+    iconName: "document-text",
+    bg: "#9c5aff",
+    rightText: "123",
+  },
   { label: "Language", icon: Entypo, iconName: "language", bg: "#f7c942" },
   { label: "Refer & Earn", icon: Entypo, iconName: "megaphone", bg: "#ff9051" },
-  { label: "Theme", icon: Ionicons, iconName: "moon", bg: "#a663f7", isSwitch: true },
-  { label: "Videos for you", icon: MaterialIcons, iconName: "video-library", bg: "#fcbf49" },
-  { label: "Support Ticket", icon: Ionicons, iconName: "help-buoy", bg: "#e94a66" },
+  {
+    label: "Theme",
+    icon: Ionicons,
+    iconName: "moon",
+    bg: "#a663f7",
+    isSwitch: true,
+  },
+  {
+    label: "Videos for you",
+    icon: MaterialIcons,
+    iconName: "video-library",
+    bg: "#fcbf49",
+  },
+  {
+    label: "Support Ticket",
+    icon: Ionicons,
+    iconName: "help-buoy",
+    bg: "#e94a66",
+  },
   { label: "Help", icon: Feather, iconName: "help-circle", bg: "#ffbd00" },
-  { label: "Call", icon: Ionicons, iconName: "call", bg: "#5cb85c" },
+  // { label: "Call", icon: Ionicons, iconName: "call", bg: "#5cb85c" },
   { label: "Log-out", icon: MaterialIcons, iconName: "logout", bg: "#f25c54" },
 ];
 

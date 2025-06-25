@@ -1,19 +1,29 @@
-import { useRouter } from 'expo-router';
-import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { useRouter } from "expo-router";
+import React from "react";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import Profile from "../assets/images/Profile.png";
 
 export default function FormScreen() {
   const handleNext = () => {
-    alert('Form submitted!');
+    alert("Form submitted!");
   };
-const router = useRouter();
+  const router = useRouter();
   return (
     <ScrollView style={styles.container}>
       <View style={styles.avatarContainer}>
         <Image
-          source={{ uri: 'https://via.placeholder.com/100' }} // Replace with actual image
+          source={Profile} // Replace with actual image
           style={styles.avatar}
         />
+        {/* <FontAwesome5 name="user-circle" size={84} color="black" /> */}
       </View>
 
       <Text style={styles.label}>AADHAR NO.</Text>
@@ -38,10 +48,17 @@ const router = useRouter();
       <TextInput style={styles.input} placeholder="melpeters@gmail.com" />
 
       <Text style={styles.agreeText}>
-        By signing up you agree to our <Text style={styles.link}>Terms and conditions</Text> and <Text style={styles.link}>Privacy Policy</Text>.
+        By signing up you agree to our{" "}
+        <Text style={styles.link}>Terms and conditions</Text> and{" "}
+        <Text style={styles.link}>Privacy Policy</Text>.
       </Text>
 
-      <TouchableOpacity style={styles.nextButton} onPress={() => {router.push('/UploadScreen')}}>
+      <TouchableOpacity
+        style={styles.nextButton}
+        onPress={() => {
+          router.push("/UploadScreen");
+        }}
+      >
         <Text style={styles.nextText}>NEXT →</Text>
       </TouchableOpacity>
     </ScrollView>
@@ -53,12 +70,12 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     paddingTop: 40,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     // height:900,
     // height: Dimensions.get('window').height+1200,
   },
   avatarContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 20,
   },
   avatar: {
@@ -67,34 +84,34 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   label: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginTop: 10,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: "#ddd",
     borderRadius: 6,
     padding: 10,
     marginTop: 4,
   },
   agreeText: {
     fontSize: 12,
-    color: '#555',
+    color: "#555",
     marginTop: 10,
   },
   link: {
-    color: 'blue',
-    textDecorationLine: 'underline',
+    color: "blue",
+    textDecorationLine: "underline",
   },
   nextButton: {
-    backgroundColor: '#91b49c',
+    backgroundColor: "#91b49c",
     padding: 15,
     borderRadius: 8,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 20,
   },
   nextText: {
-    color: '#fff',
-    fontWeight: 'bold',
+    color: "#fff",
+    fontWeight: "bold",
   },
 });
