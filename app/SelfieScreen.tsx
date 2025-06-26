@@ -3,6 +3,7 @@ import { useRouter } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Profile from "../assets/images/Profile.png";
+import RectangleBackgoround from "../assets/images/RectangleBackgoround.png";
 
 export default function SelfieScreen() {
   const handleSelfieClick = () => {
@@ -17,6 +18,18 @@ export default function SelfieScreen() {
   const router = useRouter();
   return (
     <View style={styles.container}>
+      <Image
+        source={RectangleBackgoround}
+        style={{
+          width: "100%",
+          height: 150, // Adjust height as needed to cover the profile image appropriately
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          resizeMode: "stretch", // Ensures the image stretches to fill the area without distortion
+        }}
+      />
       <View style={styles.avatarContainer}>
         <Image
           source={Profile} // Replace with your actual image URL
@@ -54,13 +67,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    padding: 20,
+    // padding: 20,
     justifyContent: "space-between",
     paddingBottom: 40,
   },
   avatarContainer: {
     alignItems: "center",
-    marginTop: 50,
+    marginTop: 130,
+    zIndex: 1,
   },
   avatar: {
     width: 100,
@@ -89,6 +103,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 8,
     alignItems: "center",
+    marginHorizontal: 20,
   },
   verifyText: {
     color: "#fff",
