@@ -416,10 +416,11 @@ const styles = StyleSheet.create({
   verticalTimelineLine: {
     position: "absolute",
     left: 60, // Position of the timeline line relative to stepsWrapper's left edge
-    top: 10, // Adjusted top to align with the center of the first circle
+    top: 20, // Adjusted top to align with the center of the first circle
     bottom: 60, // Adjusted bottom to stop before the last circle
     width: 2,
     backgroundColor: "#0f0", // Green color for the line
+    height: 450,
   },
   stepsContentContainer: {
     marginLeft: 40, // Offsets the step content to the right, making space for the line and circles

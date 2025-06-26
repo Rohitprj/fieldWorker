@@ -73,10 +73,16 @@
 //   },
 // });
 
-import { Entypo, Feather, Ionicons, MaterialIcons } from "@expo/vector-icons";
-import { router } from "expo-router";
+import { Entypo, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import React from "react";
-import { Button, ScrollView, StyleSheet, Switch, Text, TouchableOpacity, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Switch,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function SettingsScreen() {
   const [isDarkTheme, setIsDarkTheme] = React.useState(true);
@@ -103,11 +109,13 @@ export default function SettingsScreen() {
       {/* Menu Items */}
       {menuItems.map((item, index) => (
         <TouchableOpacity style={styles.menuItem} key={index}>
-          <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}> 
+          <View style={[styles.iconWrapper, { backgroundColor: item.bg }]}>
             <item.icon name={item.iconName} size={20} color={"white"} />
           </View>
           <Text style={styles.menuLabel}>{item.label}</Text>
-          {item.rightText && <Text style={styles.rightText}>{item.rightText}</Text>}
+          {item.rightText && (
+            <Text style={styles.rightText}>{item.rightText}</Text>
+          )}
           {item.isSwitch ? (
             <Switch
               value={isDarkTheme}
@@ -120,24 +128,47 @@ export default function SettingsScreen() {
           )}
         </TouchableOpacity>
       ))}
-<View style={{ marginBottom: 30 }}>
-           <Button title="Go to Face Selfie Screen" onPress={() => router.push('/Settings')} />
-         </View>
+      {/* <View style={{ marginBottom: 30 }}>
+        <Button
+          title="Go to Face Selfie Screen"
+          onPress={() => router.push("/Settings")}
+        />
+      </View> */}
     </ScrollView>
   );
 }
 
 const menuItems = [
   { label: "Account", icon: MaterialIcons, iconName: "person", bg: "#f78c2a" },
-  { label: "Notifications", icon: Ionicons, iconName: "notifications", bg: "#ef4f91" },
-  { label: "Statement", icon: Ionicons, iconName: "document-text", bg: "#9c5aff" },
+  {
+    label: "Notifications",
+    icon: Ionicons,
+    iconName: "notifications",
+    bg: "#ef4f91",
+  },
+  {
+    label: "Statement",
+    icon: Ionicons,
+    iconName: "document-text",
+    bg: "#9c5aff",
+  },
   { label: "Language", icon: Entypo, iconName: "language", bg: "#f7c942" },
   { label: "Refer & Earn", icon: Entypo, iconName: "megaphone", bg: "#ff9051" },
-  { label: "Theme", icon: Ionicons, iconName: "moon", bg: "#a663f7" },
-  { label: "Videos for you", icon: MaterialIcons, iconName: "video-library", bg: "#fcbf49" },
-  { label: "Support Ticket", icon: Ionicons, iconName: "help-buoy", bg: "#e94a66" },
-  { label: "Help", icon: Feather, iconName: "help-circle", bg: "#ffbd00" },
-  { label: "Log-out", icon: MaterialIcons, iconName: "logout", bg: "#f25c54" },
+  // { label: "Theme", icon: Ionicons, iconName: "moon", bg: "#a663f7" },
+  {
+    label: "Videos for you",
+    icon: MaterialIcons,
+    iconName: "video-library",
+    bg: "#fcbf49",
+  },
+  {
+    label: "Support Ticket",
+    icon: Ionicons,
+    iconName: "help-buoy",
+    bg: "#e94a66",
+  },
+  // { label: "Help", icon: Feather, iconName: "help-circle", bg: "#ffbd00" },
+  // { label: "Log-out", icon: MaterialIcons, iconName: "logout", bg: "#f25c54" },
 ];
 
 const styles = StyleSheet.create({
