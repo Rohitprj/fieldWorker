@@ -2,19 +2,14 @@ import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-
+import Selfie from "../assets/images/selfie.png";
 export default function FaceSelfieScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.instruction}>Face should be centered</Text>
 
       <View style={styles.faceContainer}>
-        <Image
-          source={{
-            uri: "https://img.icons8.com/ios-filled/100/000000/face-id.png",
-          }}
-          style={styles.faceIcon}
-        />
+        <Image source={Selfie} style={{ height: 260, width: 260 }} />
       </View>
 
       {/* <TouchableOpacity
@@ -58,8 +53,8 @@ const styles = StyleSheet.create({
   faceContainer: {
     width: 200,
     height: 200,
-    borderRadius: 100,
-    backgroundColor: "#ddd",
+    // borderRadius: 100,
+    // backgroundColor: "#ddd",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 40,

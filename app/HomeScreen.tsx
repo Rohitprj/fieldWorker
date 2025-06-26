@@ -1,3 +1,4 @@
+import StepProgressBar from "@/components/StepProgressBar";
 import { Entypo, FontAwesome } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
@@ -62,7 +63,7 @@ export default function HomeScreen() {
       </Text>
 
       {/* Progress Bar */}
-      <View style={styles.progressContainer}>
+      {/* <View style={styles.progressContainer}>
         <View style={styles.step}>
           <Text style={styles.stepLabel}>1500</Text>
           <View style={[styles.circle, styles.completedCircle]} />
@@ -86,8 +87,8 @@ export default function HomeScreen() {
           <View style={[styles.circle, styles.pendingCircle]} />
           <Text style={styles.stepSub}>40</Text>
         </View>
-      </View>
-
+      </View> */}
+      <StepProgressBar />
       {/* Unrooted Accounts */}
       <TouchableOpacity
         style={styles.unrootedContainer}
@@ -209,6 +210,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 40,
     marginTop: 80,
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    padding: 16,
+    width: "90%",
+    maxWidth: 600,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 10,
+    elevation: 5,
   },
   step: {
     alignItems: "center",

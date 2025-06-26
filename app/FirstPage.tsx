@@ -460,17 +460,16 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: "#0f0", // Green inner circle for active radio button
   },
   incompleteCircle: {
-    borderColor: "#ccc", // Grey border for incomplete (radio)
+    borderColor: "#0291F7", // Grey border for incomplete (radio)
     backgroundColor: "#fff", // White background for incomplete radio button
   },
   incompleteRadioButtonInner: {
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: "#ccc", // Grey inner circle for incomplete radio button
+    backgroundColor: "#0291F7", // Grey inner circle for incomplete radio button
   },
   stepNumberText: {
     fontSize: 10,
