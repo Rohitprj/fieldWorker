@@ -44,6 +44,8 @@ export default function RootLayout() {
         />
         <Stack.Screen name="HelpScreen" options={{ headerShown: false }} />
         <Stack.Screen name="Settings" options={{ headerShown: false }} />
+        <Stack.Screen name="Statements" options={{ headerShown: false }} />
+        <Stack.Screen name="SupportTicket" options={{ headerShown: false }} />
 
         <Stack.Screen name="+not-found" />
       </Stack>

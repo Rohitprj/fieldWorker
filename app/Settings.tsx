@@ -928,7 +928,7 @@ const menuItems = [
     iconName: "document-text",
     bg: "#9c5aff",
     rightText: "123",
-    route: "/HomeScreen", // Added route
+    route: "/Statements", // Added route
   },
   { label: "Language", icon: Entypo, iconName: "language", bg: "#f7c942" },
   { label: "Refer & Earn", icon: Entypo, iconName: "megaphone", bg: "#ff9051" },
@@ -950,6 +950,7 @@ const menuItems = [
     icon: Ionicons,
     iconName: "help-buoy",
     bg: "#e94a66",
+    route: "/SupportTicket",
   },
   {
     label: "Help",
